@@ -26,8 +26,17 @@ namespace Sandwiches.Controllers
         [HttpPost("process")]
         public IActionResult Process(Sammich lunch)
         {
-            Console.WriteLine("HAHAAHAHAHHAAH");
-            return View("Results",lunch);
+            if(ModelState.IsValid)
+            {
+                // Normally we would put in Database and redirect.
+                // For meow we will render.
+                return View("Results",lunch);
+
+            }
+            else{
+                // Send it back to the form from which it came.
+                return View("Index",lunch);
+            }
         }
 
         public IActionResult Privacy()
