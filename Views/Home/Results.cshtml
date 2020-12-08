@@ -1,0 +1,18 @@
+@model Sammich
+@{
+    ViewData["Title"] = @Model.Name;
+}
+
+<div class="card col-6 mx-auto">
+    <div class="card-body">
+        <h1 class="card-title">@Model.Name</h1>
+        <h4 class="card-subtitle text-muted"># of Calories: @Model.Calories</h4>
+        <p class="card-text">Bread: @Model.Bread</p>
+        <p class="card-text">Protien: @Model.Protien</p>
+        <p class="card-text">Topping One: @Model.ToppingOne</p>
+        <p class="card-text">Topping Two: @Model.ToppingTwo</p>
+    </div>
+    <div class="card-footer">
+        <h4 class="card-subtitle">Wash it down with: @Model.Beverage</h4>
+    </div>
+</div>
